@@ -1,0 +1,48 @@
+.input{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.input div {
+    margin-top: 20px; 
+}
+
+.output{
+    width: 700px;
+    height: 600px;
+    position: absolute;
+    top: 7%;
+    right: 10%;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.output p{
+    width: 650px;
+    height: 500px;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+}
+
+.output_num{
+    width: 200px;
+    left: 100px;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+}
+
+.output_num div{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.output_num label{
+    display: inline-block;
+}
