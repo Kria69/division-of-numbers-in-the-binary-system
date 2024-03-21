@@ -34,5 +34,9 @@ function calculateAndDisplayResult() {
     const secondNumBinary = (parseInt(secondNumHex, 16)).toString(2);
     const sumBinary = addBinary(firstNumBinary, secondNumBinary);
     const sumHex = parseInt(sumBinary, 2).toString(16).toUpperCase();
-    document.querySelector('.output_text').textContent = sumHex;
+    // Получаем все элементы с классом 'output_text' и обновляем их содержимое
+    const outputTextElements = document.querySelectorAll('.output_text');
+    outputTextElements.forEach(element => {
+        element.textContent = sumHex;
+    });
 }

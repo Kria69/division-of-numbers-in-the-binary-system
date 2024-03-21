@@ -9,23 +9,41 @@
 }
 
 .output{
-    width: 700px;
-    height: 600px;
+    width: 1000px;
+    height: 550px;
     position: absolute;
-    top: 7%;
-    right: 10%;
+    top: 10%;
+    right: 0;
+}
+.output div{
+    width: 450px;
+    height: 500px;
+    display: inline-block;
     border: 1px solid black;
     border-radius: 20px;
+    margin-left: 30px;
 }
 
-.output p{
-    width: 650px;
-    height: 500px;
+.recovery .output_text{
+    width: 400px;
+    height: 450px;
     position: absolute;
-    top: 47%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 5%;
+    left: 5%;
     overflow: auto;
+}
+
+.not_recovery .output_text{
+    width: 400px;
+    height: 450px;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    overflow: auto;
+}
+
+.rec, .not_rec{
+    margin-left: 100px;
 }
 
 .output_num{
@@ -45,4 +63,27 @@
 
 .output_num label{
     display: inline-block;
+}
+
+.error{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.output_error{
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    overflow: auto;
+}
+
+.text_error{
+    margin-left: 120px;
 }
