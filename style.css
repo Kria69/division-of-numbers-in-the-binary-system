@@ -66,8 +66,8 @@
 }
 
 .error{
-    width: 300px;
-    height: 200px;
+    width: 170px;
+    height: 100px;
     position: absolute;
     bottom: 5%;
     left: 5%;
@@ -76,14 +76,29 @@
 }
 
 .output_error{
-    width: 250px;
-    height: 150px;
+    width: 150px;
+    height: 50px;
     position: absolute;
-    top: 10%;
+    top: 25%;
     right: 5%;
     overflow: auto;
+    font-size: 15px;
 }
 
 .text_error{
-    margin-left: 120px;
+    margin-left: 60px;
+}
+
+.button{
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    bottom: 25%;
+    left: 5%;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    justify-content: center; 
+    align-items: center;
+    display: flex;
 }
