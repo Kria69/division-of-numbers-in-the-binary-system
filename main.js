@@ -12,9 +12,23 @@ function handleInputChange(input, outputs) {
             output.textContent = input.value.toUpperCase(); // Вывод в 16-ричной системе
         } else if (output.classList.contains("bin")) {
             const decimalValue = parseInt(input.value, 16);
-            output.textContent = decimalValue.toString(2); // Вывод в 2-ичной системе
+            const binaryValue = decimalValue.toString(2);
+            const paddedBinary = padBinaryWithZeros(binaryValue);
+            output.textContent = paddedBinary; // Вывод в 2-ичной системе
         }
     });
+}
+
+function padBinaryWithZeros(binaryValue) {
+    // Проверяем длину binaryValue и добавляем недостающие нули
+    if (binaryValue.length <= 4) {
+        return binaryValue.padStart(4, '0');
+    } else if (binaryValue.length <= 8) {
+        return binaryValue.padStart(8, '0');
+    } else if (binaryValue.length <= 16) {
+        return binaryValue.padStart(16, '0');
+    }
+    return binaryValue; // Если длина больше или равна 16, то возвращаем без изменений
 }
 
 // Функция для сложения двух чисел в двоичной системе
@@ -52,8 +66,16 @@ function calculateAndDisplayResult() {
     const firstNumDecimal = parseInt(firstNumHex, 16);
     const secondNumDecimal = parseInt(secondNumHex, 16);
     // Проверяем, что оба числа не превышают 16 бит
-    if (firstNumDecimal > 32767 || secondNumDecimal > 32767) {
-        document.querySelector('.output_error').textContent = 'Введенные числа не должены превышать 2 байта';
+    if (firstNumDecimal > 32767) {
+        document.querySelector('.output_error').textContent = 'Делимое не должно превышать 15 бит';
+        return;
+    }
+    if (secondNumDecimal > 255) {
+        document.querySelector('.output_error').textContent = 'Делитель не должен превышать 8 бит';
+        return;
+    }
+    if (secondNumDecimal > firstNumDecimal) {
+        document.querySelector('.output_error').textContent = 'Делитель не должен превышать делимое';
         return;
     }
     const firstNumBinary = (parseInt(firstNumHex, 16)).toString(2);
