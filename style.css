@@ -31,6 +31,7 @@
     top: 5%;
     left: 5%;
     overflow: auto;
+    font-size: 15px;
 }
 
 .not_recovery .output_text{
@@ -40,6 +41,7 @@
     top: 5%;
     right: 5%;
     overflow: auto;
+    font-size: 15px;
 }
 
 .rec, .not_rec{
